@@ -5,9 +5,10 @@ class List extends Component {
 		const rows = this.props.tasks.map(item => (
 				<li onClick={() => {
 						this.props.changeStatus(item.id);
-				}}
-					className={ item.status ? 'done':'' } 
-					key={item.id}>{item.content}</li>
+					}}
+					className={ item.status ? 'done':'todo' } 
+					key={item.id}
+				>{item.content}</li>
 			));
 
 		return (
