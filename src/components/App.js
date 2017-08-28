@@ -23,15 +23,13 @@ class App extends Component {
 
 	}
 	_changeTaskStatus(id){
-		let update = this.state.tasks;
-		update.map(item => {
-			if(item.id === id) {
-				return{content : item.content, id : item.id, status : !item.status}
-			}
-				return item;
-		});
 		this.setState({
-			tasks : update
+			tasks : this.state.tasks.map(item => {
+					if(item.id === id){
+						return {content : item.content, id : item.id, status : !item.status}
+					}
+						return item;
+			})
 		});
 	}
 
